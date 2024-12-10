@@ -17,6 +17,7 @@ const map = L.map('map', {
     maxZoom: 12,
     attribution: '© OpenStreetMap contributors, Tiles style by Humanitarian OpenStreetMap Team hosted by OpenStreetMap France'});
   
+
   const baseMaps = {
             "OpenStreetMap": osm,
             "OpenStreetMap.HOT": osmHOT
@@ -251,39 +252,36 @@ const map = L.map('map', {
         opacity: 0.75
     }).addTo(map); marker.bindPopup(markerData.popupContent);
   });
-  markersData.categories.forEach(function(category) {
-                if (category === "cake") cakeLayer.addLayer(marker);
-                if (category === "icecream") icecreamLayer.addLayer(marker);              if (category === "cookie") cookieLayer.addLayer(marker); 
-    if (category === "pie") pieLayer.addLayer(marker);
-     if (category === "bread") breadLayer.addLayer(marker);
-   if (category === "donut") donutLayer.addLayer(marker);
-   if (category === "waffle") waffleLayer.addLayer(marker);
-   if (category === "gelato") gelatoLayer.addLayer(marker);
-    if (category === "shavedice") shavediceLayer.addLayer(marker);
+
+  markersData.forEach(item => {
+                console.log(item.categories);
+            item.categories.forEach(dessert => {
+                console.log(dessert);
             });
-  
-  
-  cakeLayer.addTo(map);
-  icecreamLayer.addTo(map);
-  cookieLayer.addTo(map);
-  pieLayer.addTo(map);
-  breadLayer.addTo(map);
-  donutLayer.addTo(map);
-  waffleLayer.addTo(map);
-  gelatoLayer.addTo(map);
-  shavediceLayer.addTo(map);
-  
-  const overlayMaps = {
-            "Cake": cakeLayer,
-            "Ice Cream": icecreamLayer,
-            "Cookie": cookieLayer,
-            "Pie": pieLayer,
-            "Bread": breadLayer,
-            "Donut": donutLayer,
-            "Waffle": waffleLayer,
-            "Gelato": gelatoLayer,
-            "Shaved Ice": shavediceLayer
-        };
-  
-  const layerControl = L.control.layers(baseMaps, overlayMaps).addTo(map);
+            });
+ 
+            cakeLayer.addTo(map);
+            icecreamLayer.addTo(map);
+            cookieLayer.addTo(map);
+            pieLayer.addTo(map);
+            breadLayer.addTo(map);
+            donutLayer.addTo(map);
+            waffleLayer.addTo(map);
+            gelatoLayer.addTo(map);
+            shavediceLayer.addTo(map);
+            
+            const overlayMaps = {
+                      "Cake": cakeLayer,
+                      "Ice Cream": icecreamLayer,
+                      "Cookie": cookieLayer,
+                      "Pie": pieLayer,
+                      "Bread": breadLayer,
+                      "Donut": donutLayer,
+                      "Waffle": waffleLayer,
+                      "Gelato": gelatoLayer,
+                      "Shaved Ice": shavediceLayer
+                  };
+            
+            const layerControl = L.control.layers(baseMaps, overlayMaps).addTo(map);
+ 
   
