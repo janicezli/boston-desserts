@@ -4,8 +4,51 @@
 /* ===== STARTER CSS BELOW FOR body AND p IS JUST AN EXAMPLE... YOU MAY DELETE IT ===== */
 
 body {
-    background: magenta;
-}
-p {
-    font-size: 2em;
-}
+    background: #FFDDD8;
+    margin: 20px;
+  }
+  
+  ul{
+  list-style:none;
+  padding: 0;
+  display: flex;
+  }
+  
+  li {
+  background: #FFE6B0;
+  display: inline;
+  padding: 2em;
+  text-decoration: none;
+  }
+  
+  li a:hover{
+  background: lightgray;
+  }
+  
+  a { text-decoration: none; }
+  
+  p:first-of-type {
+    font-size: 1.3em;
+    background: #D2E0EE;
+    padding: 20px;
+    width: 35em;
+  }
+  
+  #map { 
+  height: 300px;
+  width: 100%;
+  min-height: 300px;
+  }
+  
+  @media (max-width: 600px) {
+  ul {
+      flex-direction: row;
+  }
+  }
+  
+  h2 {
+  background-color: #D2E0EE; 
+  padding: 10px;
+  }
+  
+  
